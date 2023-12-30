@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ubuntu-sleeper-pod
+  labels:
+    app: ub-sleep
+spec:
+  containers:
+  - name: ubuntu-sleeper-container
+    image: ubuntu-sleeper
+    command: ["sleep2.0"] # override the entrypoint
+    args: ["15"] # override the CMD
+      
+# docker run --name ubuntu-sleeper-container --entrypoint sleep2.0 ubuntu-sleeper 15
